@@ -33,5 +33,12 @@ module EM::Mongo
       r.fail "not implemented, use a subclass instead"
       return r
     end
+
+    # @requrires em-synchrony to work
+    # @core authenticate_sync Synchronous Authentication
+    def authenticate_sync(username, password)
+      require 'em-synchrony'
+      EM::Synchrony.sync self.authenticate(username, password) #TODO need to look at return value
+    end
   end
 end

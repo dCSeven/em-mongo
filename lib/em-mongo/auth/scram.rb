@@ -36,7 +36,7 @@ module EM::Mongo
       #
       # @raise [AuthenticationError]
       #
-      # @core authenticate authenticate-instance_method
+      # @core authenticate Asynchronous Authentication with Scram-SHA-1
       def authenticate(username, password)
         response = RequestResponse.new
         

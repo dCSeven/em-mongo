@@ -349,7 +349,7 @@ module EM::Mongo
              when Authentication::AuthMethod::MONGODB_CR then MONGODB_CR.new self
              else raise AuthenticationError.new("Authentication method #{auth_method} not supported")
              end
-       return auth.authenticate(username, password)
+       return auth.authenticate_sync(username, password)
     end
 
     # Adds a user to this database for use with authentication. If the user already
